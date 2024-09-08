@@ -1,0 +1,13 @@
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1010px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+@media (max-width: 974px) {
+    .movie-list {
+        display: block;
+    }
+}
