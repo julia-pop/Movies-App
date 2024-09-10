@@ -4,11 +4,11 @@ import { Consumer } from '../../services/Context';
 import './MovieList.css';
 
 export default function MovieList({
-                                      guestSessionId,
-                                      movieDBApi,
-                                      onRatingChange,
-                                      userRatings,
-                                  }) {
+    guestSessionId,
+    movieDBApi,
+    onRatingChange,
+    userRatings,
+}) {
     return (
         <Consumer>
             {(movieList) => (
@@ -16,21 +16,21 @@ export default function MovieList({
                     {movieList.length > 0 ? (
                         movieList.map((movie) => (
                             <MovieCard
-                                key={movie.id}
-                                genresID={movie.genre_ids}
-                                movieId={movie.id}
-                                movieTitle={movie.title}
-                                releaseDate={movie.release_date}
-                                description={movie.overview}
-                                imgPath={movie.poster_path}
-                                rating={movie.vote_average}
-                                movieDBApi={movieDBApi}
-                                guestSessionId={guestSessionId}
-                                userRating={userRatings[movie.id]}
-                                onRatingChange={onRatingChange}
-                                genres={movie.genres.map((genre) => ({
-                                    id: genre.id,
-                                    name: genre.name,
+                            key={movie.id}
+                            genresID={movie.genre_ids}
+                            movieId={movie.id}
+                            movieTitle={movie.title}
+                            releaseDate={movie.release_date}
+                            description={movie.overview}
+                            imgPath={movie.poster_path}
+                            rating={movie.vote_average}
+                            movieDBApi={movieDBApi}
+                            guestSessionId={guestSessionId}
+                            userRating={userRatings[movie.id]}
+                            onRatingChange={onRatingChange}
+                            genres={movie.genres.map((genre) => ({
+                                id: genre.id,
+                                name: genre.name,
                                 }))}
                             />
                         ))
